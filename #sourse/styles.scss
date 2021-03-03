@@ -222,6 +222,127 @@ h1.page_title {
 		}
 	}
 }
+
+.upload_photo_cont {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #ffffff;
+	transition: 0.3s;
+	z-index: 200;
+	width: 100%;
+	max-width: 540px;
+	display: none;
+	input {
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		font-size: 0;
+	}
+	._popup {
+	}
+	.content_box {
+		width: 100%;
+
+		padding: 60px 32px 78px;
+		.popup_header {
+			font-size: 18px;
+			line-height: 20px;
+			text-align: center;
+			color: #3c3c3c;
+			margin-bottom: 24px;
+			font-weight: bold;
+		}
+		.upload {
+			border: 1px solid #dcdcdc;
+			border-radius: 8px;
+			padding: 60px;
+			.item_mein_part {
+				text-align: center;
+				.p {
+					font-weight: 400;
+					font-size: 14px;
+					line-height: 18px;
+					text-align: center;
+					color: #3c3c3c;
+					margin-bottom: 12px;
+				}
+				.choose_fiel {
+					padding: 7px 10px;
+					background: #dcdcdc;
+					border-radius: 4px;
+					cursor: pointer;
+					display: inline-block;
+				}
+			}
+		}
+		.uploaded_img {
+			position: relative;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+			.back,
+			.front {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.back {
+			}
+			.front {
+				width: 100%;
+				height: 100%;
+
+				.img {
+					height: 100%;
+					object-fit: cover;
+					width: 167px;
+					border-radius: 100px;
+					overflow: hidden;
+					background-attachment: fixed;
+					background-color: #fff;
+
+					z-index: 100;
+					&:after {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						display: block;
+						background: #ffffff;
+						opacity: 0.5;
+					}
+				}
+			}
+			&._active {
+				height: 167px;
+			}
+		}
+	}
+}
+
+.cross {
+}
+
+.blue_href {
+	position: fixed;
+	top: 0%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #edf1fe;
+	opacity: 0.7;
+	z-index: 100;
+	display: none;
+}
+
 .input_item {
 	position: relative;
 	input {
@@ -1789,9 +1910,43 @@ h1.page_title {
 		.avatar {
 			max-width: 160px;
 			margin-bottom: 24px;
+			position: relative;
 			img {
 				width: 100%;
 				object-fit: contain;
+			}
+			.icon {
+				position: absolute;
+				right: 0;
+				top: 0;
+				background: #f7f7f7;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				border: 3px solid #ffffff;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: 0.2s;
+				opacity: 0;
+				visibility: hidden;
+				cursor: pointer;
+				svg,
+				path {
+					transition: 0.2s;
+				}
+				&:hover {
+					svg,
+					path {
+						fill: #4872f2;
+					}
+				}
+			}
+			&:hover {
+				.icon {
+					opacity: 1;
+					visibility: visible;
+				}
 			}
 		}
 		.status_item {
@@ -1820,12 +1975,19 @@ h1.page_title {
 				transform: translate(-100%, 0);
 			}
 		}
+		@media screen and (max-width: 810px) {
+			max-width: 180px;
+			margin: 0 auto 20px;
+		}
 	}
 	.input_cont {
 		flex: 1 1 auto;
 		flex-wrap: wrap;
 		display: flex;
 		margin: 0 -10px;
+		@media screen and (max-width: 810px) {
+			display: block;
+		}
 	}
 	.input_item {
 		margin: 0 10px 32px;
@@ -1914,6 +2076,9 @@ h1.page_title {
 	}
 	.input_drop_down_cont {
 	}
+	@media screen and (max-width: 810px) {
+		display: block;
+	}
 }
 
 .documents {
@@ -1932,6 +2097,9 @@ h1.page_title {
 		.download_item {
 			flex: 0 1 calc(50% - 20px);
 			margin: 0 10px 54px;
+		}
+		@media screen and (max-width: 810px) {
+			display: block;
 		}
 	}
 }
@@ -2253,6 +2421,22 @@ h1.page_title {
 				}
 			}
 		}
+		@media screen and (max-width: 700px) {
+			margin: 20px 0 0;
+		}
+	}
+	@media screen and (max-width: 700px) {
+		display: block;
+	}
+	&._2 {
+		.right_part {
+			@media screen and (max-width: 1000px) {
+				margin: 20px 0 0;
+			}
+		}
+		@media screen and (max-width: 1000px) {
+			display: block;
+		}
 	}
 }
 
@@ -2393,6 +2577,15 @@ h1.page_title {
 		&:nth-child(5) {
 			background: linear-gradient(180deg, #6cd5d9 0%, #11ced5 100%);
 		}
+		@media screen and (max-width: 1000px) {
+			flex: 0 1 calc(50% - 20px);
+		}
+		@media screen and (max-width: 700px) {
+			flex: 0 1 calc(100%);
+		}
+	}
+	@media screen and (max-width: 1000px) {
+		flex-wrap: wrap;
 	}
 }
 
@@ -2414,6 +2607,9 @@ h1.page_title {
 			}
 			&:nth-child(2) {
 				flex: 0 1 320px;
+				@media screen and (max-width: 1100px) {
+					display: none;
+				}
 			}
 		}
 	}
@@ -2428,6 +2624,9 @@ h1.page_title {
 				margin-right: 20px;
 				border: 1px solid #dcdcdc;
 				border-radius: 8px;
+				@media screen and (max-width: 1100px) {
+					margin: 0 0 20px;
+				}
 			}
 			&:nth-child(2) {
 				flex: 0 1 320px;
@@ -2438,6 +2637,9 @@ h1.page_title {
 				display: flex;
 				align-items: flex-start;
 				justify-content: space-between;
+				@media screen and (max-width: 550px) {
+					display: block;
+				}
 			}
 			.left_part {
 				flex: 0 1 270px;
@@ -2569,6 +2771,9 @@ h1.page_title {
 					}
 				}
 			}
+		}
+		@media screen and (max-width: 1100px) {
+			display: block;
 		}
 	}
 }
@@ -2750,6 +2955,7 @@ h1.page_title {
 
 .table {
 	margin-bottom: 24px;
+	min-width: 0;
 	.table_header {
 		display: flex;
 		align-items: stretch;
@@ -2783,6 +2989,9 @@ h1.page_title {
 			&:last-child {
 				border-right: none;
 			}
+		}
+		@media screen and (max-width: 1000px) {
+			width: 998px;
 		}
 	}
 	.table_main_part {
@@ -2833,6 +3042,12 @@ h1.page_title {
 				}
 			}
 		}
+		@media screen and (max-width: 1000px) {
+			width: 998px;
+		}
+	}
+	@media screen and (max-width: 1000px) {
+		overflow: auto;
 	}
 }
 .after_table_text {
@@ -2909,12 +3124,21 @@ h1.page_title {
 								input {
 									text-align: center;
 								}
+								@media screen and (max-width: 600px) {
+									margin-bottom: 20px;
+								}
+							}
+							@media screen and (max-width: 600px) {
+								display: block;
 							}
 						}
 					}
 					&:nth-child(3) {
 						margin-bottom: 0;
 					}
+				}
+				@media screen and (max-width: 600px) {
+					flex: 0 0 100% !important;
 				}
 			}
 			.back {
@@ -2977,6 +3201,9 @@ h1.page_title {
 						color: #737373;
 					}
 				}
+				@media screen and (max-width: 600px) {
+					display: none;
+				}
 			}
 		}
 		.pay_btn {
@@ -2988,6 +3215,10 @@ h1.page_title {
 			font-size: 16px;
 			line-height: 24px;
 			color: #ffffff;
+		}
+		@media screen and (max-width: 1150px) {
+			margin-right: 0;
+			max-width: 600px;
 		}
 	}
 	.subscription_card {
@@ -3109,5 +3340,12 @@ h1.page_title {
 				color: #ffffff;
 			}
 		}
+		@media screen and (max-width: 1150px) {
+			max-width: 350px;
+			margin: 30px 0 0;
+		}
+	}
+	@media screen and (max-width: 1150px) {
+		display: block;
 	}
 }

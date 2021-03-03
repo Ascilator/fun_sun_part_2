@@ -135,19 +135,36 @@
         e.stopPropagation();
     }
     let slider = $('.subscription_slider>.slider_body')
-    slider.slick({
-        infinite: false,
-        arrows: false,
-        speed: 300,
-        easing: 'ease',
-        waitForAnimate: false,
-        touchMove: true,
-        touchTreshhold: 50,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        dots: true,
-        appendDots: $('.slider_dots')
-    });
+
+    if (slider.length != 0) {
+        slider.slick({
+            infinite: false,
+            arrows: false,
+            speed: 300,
+            easing: 'ease',
+            waitForAnimate: false,
+            touchMove: true,
+            touchTreshhold: 50,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            dots: true,
+            appendDots: $('.slider_dots'),
+            responsive: [
+                {
+                    breakpoint: 1100,
+                    settings: {
+                        slidesToShow: 2,
+                    },
+                },
+                {
+                    breakpoint: 550,
+                    settings: {
+                        slidesToShow: 1,
+                    },
+                },
+            ]
+        });
+    }
 
 
     $('#sidebar_arrow').click(function () {
@@ -158,6 +175,33 @@
 
 
 
-    })
+    });
+    let upload = () => {
+        const form = $('#upload_img_form');
 
+        let formImg = $('#upload_img');
+        let imgCont = $('.uploaded_img');
+        formImg.on("change", function (e) {
+            var img = formImg[0].files[0];
+
+            if ($('.uploaded_img').children().children('.back').children().length < 1) {
+
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('.uploaded_img').addClass('_active');
+                    $('.uploaded_img').children('.front').children('.img').css({
+                        'background': `url(${e.target.result})`,
+                    })
+                    $('.uploaded_img').children('.front').children('.img').attr('id', 'draggble')
+                    $('.uploaded_img').children().children('.back').append(`<img src="${e.target.result}">`)
+                    $("#draggble").draggable({ containment: "parent" });
+                }
+                reader.readAsDataURL(img);
+            }
+
+        });
+
+
+    }
+    upload();
 });

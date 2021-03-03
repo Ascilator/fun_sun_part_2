@@ -1443,6 +1443,12 @@ h1.page_title {
   max-width: 225px;
 }
 
+.main .main_content_box._active .credit_card .front {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 350px;
+          flex: 0 0 350px;
+}
+
 .main .actions_container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4079,6 +4085,9 @@ h1.page_title {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 32px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .payment_part .credit_card_cont .credit_card .front {

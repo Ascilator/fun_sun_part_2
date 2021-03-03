@@ -1062,6 +1062,11 @@ h1.page_title {
 					max-width: 225px;
 				}
 			}
+			.credit_card {
+				.front {
+					flex: 0 0 350px;
+				}
+			}
 		}
 	}
 
@@ -2859,6 +2864,7 @@ h1.page_title {
 		.credit_card {
 			display: flex;
 			margin-bottom: 32px;
+			justify-content: space-between;
 			.front {
 				flex: 0 0 calc(410 / 590 * 100%);
 				padding: 24px;

@@ -5004,6 +5004,27 @@ h1.page_title {
   color: #4872f2;
 }
 
+.add_emprass_header .step_cont .step_item._passed {
+  background: #4872f2;
+  border: 1px solid #4872f2;
+  font-size: 0;
+  position: relative;
+}
+
+.add_emprass_header .step_cont .step_item._passed:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: url("../img/tick_white.svg");
+  background-size: 24px 18px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
 .stap_item_cont h2 {
   font-weight: 600;
   font-size: 18px;
@@ -5045,9 +5066,14 @@ h1.page_title {
   margin-bottom: 32px;
 }
 
+.stap_item_cont form .form_box._textarea {
+  border: none;
+}
+
 .stap_item_cont form .form_component {
   padding: 32px 24px;
   border-bottom: 1px solid #dcdcdc;
+  position: relative;
 }
 
 .stap_item_cont form .form_component .form_title {
@@ -5074,6 +5100,38 @@ h1.page_title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.stap_item_cont form .form_component .form_title .form_left .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.stap_item_cont form .form_component .form_title .form_left .info img {
+  margin: 0 5px;
+}
+
+.stap_item_cont form .form_component .form_title .form_left .info span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #4872f2;
+}
+
+@media screen and (max-width: 600px) {
+  .stap_item_cont form .form_component .form_title .form_left .info {
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .stap_item_cont form .form_component .form_title .form_left {
+    display: block;
+  }
 }
 
 .stap_item_cont form .form_component .form_title .check_box_key_cont {
@@ -5119,6 +5177,13 @@ h1.page_title {
 .stap_item_cont form .form_component .form_title .check_box_key_cont .check_box_key._active .front {
   left: calc(100% - 18px);
   border: 1px solid #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .stap_item_cont form .form_component .form_title .check_box_key_cont .check_box_key {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }
 
 .stap_item_cont form .form_component .form_title .check_box_key_cont .text {
@@ -5447,6 +5512,7 @@ h1.page_title {
   font-size: 14px;
   line-height: 18px;
   color: #3c3c3c;
+  margin-left: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5540,14 +5606,319 @@ h1.page_title {
   margin-bottom: 32px;
 }
 
+.stap_item_cont form .form_component .check_box_cont._unset .check_col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 400px;
+          flex: 0 1 400px;
+}
+
 @media screen and (max-width: 600px) {
   .stap_item_cont form .form_component .check_box_cont {
     display: block;
   }
 }
 
+.stap_item_cont form .form_component._bordered {
+  border: 1px solid #dcdcdc !important;
+  border-radius: 4px;
+}
+
+.stap_item_cont form .form_component._flex, .stap_item_cont form .form_component._flex_2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.stap_item_cont form .form_component._flex .form_title, .stap_item_cont form .form_component._flex_2 .form_title {
+  font-size: 18px;
+  line-height: 20px;
+  color: #737373;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .stap_item_cont form .form_component._flex .form_title, .stap_item_cont form .form_component._flex_2 .form_title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.stap_item_cont form .form_component._flex .check_col, .stap_item_cont form .form_component._flex_2 .check_col {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 292px;
+          flex: 0 1 292px;
+  margin-right: 52px;
+}
+
+.stap_item_cont form .form_component._flex .check_col:last-child, .stap_item_cont form .form_component._flex_2 .check_col:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .stap_item_cont form .form_component._flex .check_col, .stap_item_cont form .form_component._flex_2 .check_col {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.stap_item_cont form .form_component._flex .drop_down_list, .stap_item_cont form .form_component._flex_2 .drop_down_list {
+  max-width: 242px;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.stap_item_cont form .form_component._flex .drop_down_list ._drop_down_title, .stap_item_cont form .form_component._flex_2 .drop_down_list ._drop_down_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 8px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #737373;
+  border-bottom: 1px solid #dcdcdc;
+  cursor: pointer;
+}
+
+.stap_item_cont form .form_component._flex .drop_down_list ._drop_down_title .arrow, .stap_item_cont form .form_component._flex_2 .drop_down_list ._drop_down_title .arrow {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.stap_item_cont form .form_component._flex .drop_down_list .drop_down_body, .stap_item_cont form .form_component._flex_2 .drop_down_list .drop_down_body {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 10;
+}
+
+.stap_item_cont form .form_component._flex .drop_down_list .drop_down_body ._drop_item, .stap_item_cont form .form_component._flex_2 .drop_down_list .drop_down_body ._drop_item {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 18px;
+  color: #737373;
+  padding: 5px;
+}
+
+.stap_item_cont form .form_component._flex .drop_down_list .drop_down_body ._drop_item:hover, .stap_item_cont form .form_component._flex_2 .drop_down_list .drop_down_body ._drop_item:hover {
+  background: #4872f2;
+  color: #fff;
+}
+
+.stap_item_cont form .form_component._flex .drop_down_list._active .arrow, .stap_item_cont form .form_component._flex_2 .drop_down_list._active .arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.stap_item_cont form .form_component._flex .drop_down_list:nth-child(3), .stap_item_cont form .form_component._flex_2 .drop_down_list:nth-child(3) {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .stap_item_cont form .form_component._flex .drop_down_list, .stap_item_cont form .form_component._flex_2 .drop_down_list {
+    max-width: unset;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .stap_item_cont form .form_component._flex, .stap_item_cont form .form_component._flex_2 {
+    display: block;
+  }
+}
+
+.stap_item_cont form .form_component._flex_2 .form_title {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.stap_item_cont form .form_component._flex_2 .form_title .info_cont {
+  margin-right: 5px;
+}
+
+.stap_item_cont form .form_component._flex_2 .form_title span {
+  margin-right: 10px;
+}
+
+.stap_item_cont form .form_component._flex_2 .checkbox_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  margin-bottom: 18px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.stap_item_cont form .form_component._flex_2 .checkbox_item .icon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
+  border: 1px solid #b9b9b9;
+  border-radius: 4px;
+  height: 24px;
+  margin-right: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.stap_item_cont form .form_component._flex_2 .checkbox_item .icon img {
+  opacity: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.stap_item_cont form .form_component._flex_2 .checkbox_item .text {
+  font-size: 16px;
+  line-height: 20px;
+  color: #3c3c3c;
+}
+
+.stap_item_cont form .form_component._flex_2 .checkbox_item .info_cont {
+  margin-left: 8px;
+  position: relative;
+}
+
+.stap_item_cont form .form_component._flex_2 .checkbox_item .info_cont:before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0px);
+          transform: translate(-50%, 0px);
+  background: #fff;
+  width: 14px;
+  height: 8px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+          clip-path: polygon(0 0, 100% 0, 50% 100%);
+  z-index: 5;
+  display: block;
+}
+
+.stap_item_cont form .form_component._flex_2 .checkbox_item .info_cont:after {
+  content: "Можно добавить свою категорию";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -8px);
+          transform: translate(-50%, -8px);
+  padding: 12px 20px;
+  white-space: nowrap;
+  display: block;
+  font-size: 12px;
+  line-height: 16px;
+  color: #3c3c3c;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.stap_item_cont form .form_component._flex_2 .checkbox_item .info_cont:before, .stap_item_cont form .form_component._flex_2 .checkbox_item .info_cont:after {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.stap_item_cont form .form_component._flex_2 .checkbox_item .info_cont:hover:before, .stap_item_cont form .form_component._flex_2 .checkbox_item .info_cont:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.stap_item_cont form .form_component._flex_2 .checkbox_item._active .icon {
+  border: 1px solid #4872f2;
+}
+
+.stap_item_cont form .form_component._flex_2 .checkbox_item._active .icon img {
+  opacity: 1;
+}
+
+.stap_item_cont form .form_component._flex_2 .checkbox_item:last-child {
+  margin-bottom: 0;
+}
+
+.stap_item_cont form .form_component._flex_2 .drop_down_list ._drop_down_title {
+  font-weight: 400;
+  padding-bottom: 0;
+  border-bottom: 0px solid #000;
+}
+
+.stap_item_cont form .form_component._flex_2 .drop_down_list ._drop_down_title .arrow {
+  margin-left: 10px;
+}
+
+.stap_item_cont form .form_component._flex_2 .drop_down_list ._drop_down_title ._drop_item,
+.stap_item_cont form .form_component._flex_2 .drop_down_list ._drop_down_title .drop_down_body {
+  font-weight: 400;
+}
+
+.stap_item_cont form .form_component._flex_2 .text_item {
+  margin-bottom: 21px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3c3c3c;
+}
+
+.stap_item_cont form .form_component._flex_2 .text_item:last-child {
+  margin-bottom: 0;
+}
+
+.stap_item_cont form .form_component ._absol {
+  position: absolute;
+  bottom: 32px;
+  right: 24px;
+}
+
 .stap_item_cont form .form_component:last-child {
   border-bottom: none;
+}
+
+@media screen and (max-width: 600px) {
+  .stap_item_cont form .form_component {
+    display: block;
+    padding: 15px;
+  }
+}
+
+.stap_item_cont form .hidden_text {
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #737373;
+  margin-top: 12px;
+  display: block;
+  width: 100%;
+  resize: vertical;
+  min-height: 90px;
 }
 
 .stap_item_cont form .submition_part {
@@ -5590,6 +5961,8 @@ h1.page_title {
 @media screen and (max-width: 600px) {
   .stap_item_cont form .submition_part ._btn {
     margin-bottom: 10px;
+    width: 100%;
+    margin-left: 0;
   }
 }
 
@@ -5603,4 +5976,197 @@ h1.page_title {
   border-radius: 4px;
   padding: 0 60px;
   color: #fff;
+}
+
+.stap_item_cont form .submition_part .back {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+._textarea .textarea_cont {
+  margin-bottom: 12px;
+}
+
+._textarea .textarea_cont .textarea_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+._textarea .textarea_cont .textarea_header .tab_link {
+  cursor: pointer;
+  padding: 16px 0;
+  margin-right: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: -1px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #737373;
+}
+
+._textarea .textarea_cont .textarea_header .tab_link img {
+  margin-left: 5px;
+}
+
+._textarea .textarea_cont .textarea_header .tab_link._active {
+  color: #4872f2;
+  border-bottom: 2px solid #4872f2;
+}
+
+._textarea .textarea_cont .textarea_title {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3c3c3c;
+}
+
+._textarea .textarea_cont .textarea_desc {
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #3c3c3c;
+}
+
+._textarea .textarea_cont .textarea_body {
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  position: relative;
+}
+
+._textarea .textarea_cont .textarea_body .textarea_controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background: #edf1fe;
+}
+
+._textarea .textarea_cont .textarea_body .textarea_controls .control_text {
+  padding: 20px 20px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 72px;
+          flex: 0 1 72px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+._textarea .textarea_cont .textarea_body .textarea_controls .control_text .arrow {
+  margin-left: 10px;
+}
+
+._textarea .textarea_cont .textarea_body .textarea_controls .control_text._border:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1px;
+  height: 24px;
+  display: block;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  background: #dcdcdc;
+}
+
+._textarea .textarea_cont .textarea_body .textarea_controls .control_text .hover {
+  position: absolute;
+  top: 90%;
+}
+
+._textarea .textarea_cont .textarea_body .textarea_controls .control_text .hover:before {
+  content: "Полужирный";
+  position: absolute;
+  top: 100%;
+  padding: 12px 20px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #3c3c3c;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  display: block;
+  opacity: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  visibility: hidden;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+._textarea .textarea_cont .textarea_body .textarea_controls .control_text .hover:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 14px;
+  height: 8px;
+  -webkit-clip-path: polygon(50% 0, 100% 100%, 0 100%);
+          clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  background: #fff;
+  left: 50%;
+  -webkit-transform: translate(-50%, -8px);
+          transform: translate(-50%, -8px);
+  opacity: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  visibility: hidden;
+}
+
+._textarea .textarea_cont .textarea_body .textarea_controls .control_text:hover .hover:before, ._textarea .textarea_cont .textarea_body .textarea_controls .control_text:hover .hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+._textarea .textarea_cont .textarea_body .textarea_controls .control_text._active {
+  background: #fff;
+}
+
+._textarea .textarea_cont .textarea_body textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  padding: 24px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #b9b9b9;
+  resize: vertical;
+  min-height: 280px;
+}
+
+._textarea .textarea_cont .textarea_body .symbols {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #b9b9b9;
 }

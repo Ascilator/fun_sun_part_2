@@ -169,14 +169,19 @@
 
     $('#sidebar_arrow').click(function () {
         setTimeout(function () {
-            $('.subscription_slider>.slider_body').slick('setPosition');
-            slider.slick('setPosition');
+            if ($('.subscription_slider').length != 0) {
+                $('.subscription_slider>.slider_body').slick('setPosition');
+                slider.slick('setPosition');
+            }
         }, 250)
 
 
 
     });
-
+    $('.control_text').click(function () {
+        $(this).siblings().removeClass('_active');
+        $(this).addClass('_active');
+    })
     $('#dowload_photo_caller').click(function () {
         $('.upload_photo_cont').addClass('_showed');
         $('.blue_href').addClass('_showed');

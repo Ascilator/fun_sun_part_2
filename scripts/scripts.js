@@ -540,9 +540,42 @@
         }
 
     }
+    let search_messege = (text) => {
+        $('.messege_item').removeClass('_founded');
+        for (let i = 0; i < $('.messege_item').length; i++) {
+            let index = $('.messege_item').eq(i).text().indexOf(text);
+            if (index != -1) {
+                $('.messege_item').eq(i).addClass('_founded');
+            }
+        }
+    }
+    let messege_block = () => {
+        $('.search_messege>input').change(function () {
+            search_messege($(this).val());
+
+        })
+    }
+    let submit_messege = () => {
+        $('._messeg').on('click', function () {
+            if ($('#messege').val().length != 0) {
+                create_messege($('#messege').val(), $('#messege'));
+            }
+        });
+    }
+    let create_messege = (text, textarea) => {
+
+        var messege = $('.messege_block._my').eq(0).clone();
+        messege.children('.text_content').children('.messege_item').text(text);
+        $('.messege_body').append(messege);
+
+        $('.messege_body').scrollTop($('.messege_body').prop('scrollHeight'));
+        $('.messege_item').removeClass('_founded');
+        textarea.val('');
+    }
+    submit_messege();
     upload();
     calendar();
-
+    messege_block();
 
 
 

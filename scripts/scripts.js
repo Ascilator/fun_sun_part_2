@@ -552,12 +552,22 @@
     let messege_block = () => {
         $('.search_messege>input').change(function () {
             search_messege($(this).val());
-
         })
+        $('.search_messege').on('submit', function (e) {
+            e.preventDefault();
+            search_messege($(this).children('input').val());
+        })
+
     }
     let submit_messege = () => {
         $('._messeg').on('click', function () {
             if ($('#messege').val().length != 0) {
+                create_messege($('#messege').val(), $('#messege'));
+            }
+        });
+        $('#messege').on('keydown', function (e) {
+
+            if (e.keyCode === 13) {
                 create_messege($('#messege').val(), $('#messege'));
             }
         });
@@ -571,7 +581,16 @@
         $('.messege_body').scrollTop($('.messege_body').prop('scrollHeight'));
         $('.messege_item').removeClass('_founded');
         textarea.val('');
+        textarea.focus();
     }
+    let destroy_messege = () => {
+        $('.dialog_item').on('click', function () {
+            $('.dialog_item').not(this).removeClass('_current');
+            $(this).addClass('_current');
+            $('.messege_container').empty();
+        });
+    }
+    destroy_messege();
     submit_messege();
     upload();
     calendar();

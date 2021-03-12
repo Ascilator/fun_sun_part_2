@@ -7633,6 +7633,57 @@ h1.page_title {
 		display: block;
 	}
 }
+.all_messege_part {
+	flex: 0 1 298px;
+	margin-right: 20px;
+	.dialog_cont {
+		border: 1px solid #dcdcdc;
+		border-radius: 4px;
+		.dialog_item {
+			border-bottom: 1px solid #dcdcdc;
+			padding: 13px 13px 16px;
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			transition: 0.2s;
+			.avatar {
+				flex: 0 0 38px;
+				height: 38px;
+				margin-right: 13px;
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.text_part {
+				.name {
+					font-size: 14px;
+					line-height: 18px;
+					color: #3c3c3c;
+					margin-bottom: 8px;
+				}
+				.date {
+					font-size: 12px;
+					line-height: 16px;
+					color: #737373;
+				}
+			}
+			&:last-child {
+				border-bottom: none;
+			}
+			&._current {
+				background: #f2f2f2;
+			}
+		}
+		@media screen and (max-width: 900px) {
+			height: 216px;
+			overflow: auto;
+		}
+	}
+	@media screen and (max-width: 900px) {
+		margin: 0 0 20px;
+	}
+}
 
 .messege_apll {
 	flex: 1 1 auto;
@@ -7789,7 +7840,7 @@ h1.page_title {
 			align-items: flex-start;
 			flex-wrap: wrap;
 			.type_col {
-				flex: 0 1 242px;
+				flex: 0 1 230px;
 			}
 			.col_header {
 				font-weight: 600;

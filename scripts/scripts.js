@@ -575,8 +575,22 @@
     let create_messege = (text, textarea) => {
 
         var messege = $('.messege_block._my').eq(0).clone();
-        messege.children('.text_content').children('.messege_item').text(text);
-        $('.messege_body').append(messege);
+        let html_item = [`<div class="messege_block _my">
+										<div class="avatar">
+											<img src="img/avatar.png" alt="">
+										</div>
+										<div class="text_content">
+											<div class="type">Тип: позитив, гости [id 2342]</div>
+											<div class="messege_item">Привет, Александр! Отличное начало, не забудь
+												поставить им оценки</div>
+											<div class="date">01.07.2020 14:22</div>
+										</div>
+                                    </div>`];
+        html_item = html_item.join(' ');
+        html_item = $(html_item);
+
+        html_item.children('.text_content').children('.messege_item').text(text);
+        $('.messege_body').append(html_item);
 
         $('.messege_body').scrollTop($('.messege_body').prop('scrollHeight'));
         $('.messege_item').removeClass('_founded');

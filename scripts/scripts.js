@@ -675,6 +675,54 @@
             $('.messege_container').empty();
         });
     }
+    let chart = () => {
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myLineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["28 май", "8 июн", "22 июн", '6 июл', "28 май", "8 июн", "22 июн", '6 июл',],
+
+                datasets: [{
+                    backgroundColor: 'rgba(72, 114, 242, 0.1)',
+                    borderCapStyle: 'round',
+                    borderColor: '#007AFF',
+                    data: [1000, 2000, 3233, 1324, 1345, 3456, 1000, 2000, 3233, 1324, 1345, 3456],
+                }]
+            },
+            options: {
+
+                scales: {
+                    yAxes: [{
+                        stacked: true,
+
+                        beginAtZero: false,
+                        gridLines: {
+                            display: false,
+                        },
+                        ticks: {
+                            stepSize: 1000,
+                            padding: 14,
+                        },
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            padding: 10,
+                            maxTicksLimit: 6,
+                            stepSize: 1,
+                        },
+                    }]
+                },
+                legend: {
+                    display: false,
+                },
+                tooltips: {
+                    enabled: false,
+                },
+            }
+
+        });
+    }
+    //chart();
     town_serch();
     destroy_messege();
     submit_messege();

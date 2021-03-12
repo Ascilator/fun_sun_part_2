@@ -615,6 +615,9 @@ h1.page_title {
 			&:first-child {
 				.item_title {
 					margin-right: 42px;
+					@media screen and (max-width: 520px) {
+						margin-right: 12px;
+					}
 				}
 			}
 		}
@@ -629,6 +632,9 @@ h1.page_title {
 					padding: 8px 10px;
 				}
 			}
+		}
+		@media screen and (max-width: 1200px) {
+			flex-wrap: wrap;
 		}
 	}
 }

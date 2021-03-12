@@ -139,3 +139,204 @@
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
+
+.graphics_cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  margin-top: 20px;
+  margin: 20px -10px 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.graphics_cont .graph_item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(50% - 20px);
+          flex: 0 1 calc(50% - 20px);
+  padding: 25px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  position: relative;
+  margin: 0 10px 20px;
+}
+
+.graphics_cont .graph_item .graph_header {
+  font-size: 16px;
+  line-height: 20px;
+  color: #737373;
+  margin-bottom: 33px;
+  font-weight: bold;
+}
+
+.graphics_cont .graph_item .graph_body {
+  height: 276px;
+  padding-left: 45px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.graphics_cont .graph_item .graph_body .chart_y {
+  top: 0;
+  width: 45px;
+  left: 0;
+  position: absolute;
+  height: calc(100% - 30px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 10px;
+  line-height: 12px;
+  color: #737373;
+  border-right: 1px solid #f2f2f2;
+}
+
+.graphics_cont .graph_item .graph_body .chart_x {
+  height: 30px;
+  border-top: 1px solid #f2f2f2;
+  bottom: 5px;
+  left: 45px;
+  position: absolute;
+  width: calc(100% - 45px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 10px;
+  line-height: 12px;
+  color: #737373;
+}
+
+.graphics_cont .graph_item .graph_body .chart_x .chart_item {
+  position: relative;
+}
+
+.graphics_cont .graph_item .graph_body .chart_x .chart_item:after {
+  content: "";
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  width: 1px;
+  height: 246px;
+  display: block;
+  background: #f2f2f2;
+}
+
+@media screen and (max-width: 450px) {
+  .graphics_cont .graph_item .graph_body .chart_x .chart_item:after {
+    height: 170px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .graphics_cont .graph_item .graph_body .chart_x .chart_item {
+    white-space: nowrap;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+  .graphics_cont .graph_item .graph_body .chart_x .chart_item p {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+.graphics_cont .graph_item .graph_body .img {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  z-index: 2;
+  position: relative;
+}
+
+.graphics_cont .graph_item .graph_body .img img {
+  width: 100%;
+}
+
+@media screen and (max-width: 450px) {
+  .graphics_cont .graph_item .graph_body {
+    height: 200px;
+  }
+}
+
+.graphics_cont .graph_item .cross {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.graphics_cont .graph_item .add_container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.graphics_cont .graph_item .add_container .add_one_more_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 20px;
+  border: 1px solid #4872f2;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.graphics_cont .graph_item .add_container .add_one_more_btn .icon {
+  margin-right: 8px;
+}
+
+.graphics_cont .graph_item .add_container .add_one_more_btn .text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #4872f2;
+}
+
+@media screen and (max-width: 900px) {
+  .graphics_cont .graph_item .add_container {
+    height: 285px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .graphics_cont .graph_item {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .graphics_cont {
+    display: block;
+  }
+}

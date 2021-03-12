@@ -114,6 +114,160 @@ h1.page_title {
 	}
 }
 
+.choose_town {
+	position: fixed;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: #fff;
+	z-index: 1000;
+	padding: 0 20px;
+	transition: 0.3s;
+	.choose_content_box {
+		max-width: 1110px;
+		margin: 0 auto;
+		padding-top: 60px;
+		padding-bottom: 40px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		.choose_header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 25px;
+			.title {
+				font-weight: bold;
+				font-size: 18px;
+				line-height: 20px;
+				color: #3c3c3c;
+			}
+			.cross {
+				width: 32px;
+				height: 32px;
+				cursor: pointer;
+				position: relative;
+				&:after {
+					content: "";
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%) rotate(45deg);
+					width: 100%;
+					height: 2px;
+					display: block;
+					background: #737373;
+				}
+				&:before {
+					content: "";
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%) rotate(-45deg);
+					width: 100%;
+					height: 2px;
+					display: block;
+					background: #737373;
+				}
+			}
+		}
+		.choose_search_row {
+			position: relative;
+			max-width: 476px;
+			margin-bottom: 24px;
+			input {
+				width: 100%;
+				height: 33px;
+				padding-right: 24px;
+				padding-bottom: 12px;
+				border: none;
+				border-bottom: 1px solid #dcdcdc;
+				font-size: 16px;
+				line-height: 20px;
+				color: #737373;
+				&._focused {
+					border-bottom: 1px solid #3c3c3c;
+				}
+			}
+			.icon {
+				position: absolute;
+				top: 4px;
+				right: 0;
+			}
+		}
+		.search_town_body {
+			flex: 1 1 auto;
+			display: flex;
+			align-items: flex-start;
+			overflow: auto;
+			//height: calc(100vh - 40px -);
+			.town_colum {
+				flex: 0 1 25%;
+				padding-right: 30px;
+				.popular_towns {
+					margin-bottom: 12px;
+					.popular_town {
+						font-weight: 600;
+						font-size: 14px;
+						line-height: 18px;
+						color: #3c3c3c;
+						margin-bottom: 12px;
+						cursor: pointer;
+					}
+				}
+				.town_item {
+					margin-bottom: 12px;
+					.letter_title {
+						font-weight: 600;
+						font-size: 14px;
+						line-height: 18px;
+						color: #3c3c3c;
+						margin-bottom: 8px;
+					}
+					.town {
+						cursor: pointer;
+						font-size: 14px;
+						line-height: 18px;
+						color: #737373;
+						margin-bottom: 12px;
+					}
+				}
+				.search_result {
+					margin-bottom: 12px;
+					font-weight: 600;
+					font-size: 16px;
+					line-height: 20px;
+					color: #737373;
+					transition: 0.2s;
+					cursor: pointer;
+					&:first-child {
+						color: #3c3c3c;
+					}
+					&:hover {
+						color: #4872f2;
+					}
+				}
+				@media screen and (max-width: 700px) {
+					flex: 0 1 calc(33.333%);
+				}
+				@media screen and (max-width: 550px) {
+					flex: 0 1 calc(50%);
+				}
+				@media screen and (max-width: 400px) {
+					flex: 0 1 calc(100%);
+				}
+			}
+			@media screen and (max-width: 700px) {
+				flex-wrap: wrap;
+			}
+		}
+	}
+	&._active {
+		top: 0;
+	}
+}
+
 ._blue_btn {
 	transition: 0.2s;
 	border: 1px solid #0000 !important;
@@ -448,6 +602,32 @@ h1.page_title {
 		.calendar_item {
 			&:first-child {
 				margin-right: 9px;
+			}
+		}
+	}
+	&._settings {
+		flex-wrap: nowrap;
+		.calendar_item {
+			margin-right: 18px;
+			.drop_dowm_list {
+				flex: 0 0 150px;
+			}
+			&:first-child {
+				.item_title {
+					margin-right: 42px;
+				}
+			}
+		}
+		.info_container {
+			flex: 1 1 auto;
+			.buttons {
+				flex: 1 1 auto;
+				margin-right: -5px;
+				.button {
+					flex: 1 1 auto;
+					text-align: center;
+					padding: 8px 10px;
+				}
 			}
 		}
 	}
@@ -3042,6 +3222,8 @@ h1.page_title {
 		@media screen and (max-width: 700px) {
 			display: block;
 		}
+	}
+	&._analitics {
 	}
 }
 

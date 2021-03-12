@@ -482,7 +482,78 @@
         }
 
     }
+    let town_serch = () => {
+        $('.position').click(function () {
+            $('.choose_town').addClass('_active');
+        })
 
+        $('#choose_town_cross').on('click', function () {
+            $('.choose_town').removeClass('_active');
+        })
+        let listener = () => {
+            $('.town').click(function () {
+                $('.position').children().children('.text').text($(this).text());
+                $('.choose_town').removeClass('_active');
+            });
+        }
+        listener();
+        let inside_body;
+        let is_append = false;
+        $('#search_town_input').on('focus', function () {
+            $(this).addClass('_focused');
+            inside_body = $('.search_town_body').children();
+            $('.search_town_body').empty();
+        })
+        $('#search_town_input').on('keydown', function () {
+            if ($(this).val().length != 0) {
+
+                if (!is_append) {
+                    $('.search_town_body').append('<div class="town_colum"></div>');
+                    for (let i = 0; i < 5; i++) {
+                        $('.town_colum').append(`<div class="search_result town">Абакан</div>`);
+                        listener();
+                    }
+                    is_append = true;
+                }
+
+            }
+        });
+
+        $('#search_town_input').on('blur', function () {
+            $(this).removeClass('_focused');
+            setTimeout(function () {
+
+                $('.search_town_body').empty();
+                is_append = false;
+                $('.search_town_body').append(inside_body);
+                listener();
+            }, 100);
+
+        })
+    }
+    // let town_serch = () => {
+    //     let Data = ['Aбакан', 'Aбакан', 'Aбакан', 'Aбакан', 'Aбакан', 'Aбакан', 'Aбакан', 'Aбакан', 'Aбакан', 'Балаково', 'Балаково', 'Балаково', 'Балаково', 'Балаково', 'Балаково', 'Балаково', 'Балаково', 'Балаково', 'Балаково'];
+    //     var k = Data.length / 4;
+    //     let curr_letter = Data[0][0];
+    //     for (let i = 0; i < k && i < Data.length; i++) {
+    //         let html_block;
+    //         html_block = [`<div class="town_item">
+    // 					<div class="letter_title">${curr_letter}</div>
+    //                 </div>`];
+    //         html_block = html_block.join(' ');
+    //         html_block = $(html_block);
+
+
+    //         if (curr_letter != Data[i][0]) {
+    //             curr_letter = Data[i][0];
+
+
+    //             html_block.append(`<div class="town_name">${Data[i]}</div>`);
+    //         } else { 
+    //             html_block.append(`<div class="town_name">${Data[i]}</div>`);
+    //         }
+    //     }
+    // }
     let upload = () => {
         const form = $('#upload_img_form');
 
@@ -604,6 +675,7 @@
             $('.messege_container').empty();
         });
     }
+    town_serch();
     destroy_messege();
     submit_messege();
     upload();

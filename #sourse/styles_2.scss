@@ -1,0 +1,102 @@
+.settings_block {
+    padding: 24px 24px 4px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    .settings_header {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 20px;
+        color: #737373;
+        margin-bottom: 12px;
+    }
+    .settings_drop_list {
+        display: flex;
+        align-items: center;
+        .text {
+            margin-right: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            color: #3c3c3c;
+        }
+        .drop_down_list {
+            position: relative;
+            flex: 1 1 auto;
+            ._drop_down_title {
+                height: 40px;
+                background: #ffffff;
+                border: 1px solid #dcdcdc;
+                box-sizing: border-box;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 12px;
+                transition: 0.2s;
+                color: #737373;
+                .arrow {
+                    transition: 0.2s;
+                }
+            }
+            .drop_down_body {
+                position: absolute;
+                top: calc(100% + 2px);
+                left: 0;
+                width: 100%;
+                z-index: 10;
+                background: #fff;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 10px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 0px 0px 5px 5px;
+                padding-bottom: 8px;
+                text-align: center;
+                display: none;
+                ._drop_item {
+                    padding: 8px 0 8px 12px;
+                    display: flex;
+                    align-items: center;
+                    .icon {
+                        margin-right: 12px;
+                        width: 24px;
+                        height: 24px;
+                        border: 1px solid #b9b9b9;
+                        border-radius: 4px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img {
+                            opacity: 0;
+                        }
+                    }
+                    .text {
+                        font-size: 16px;
+                        line-height: 20px;
+                        color: #3c3c3c;
+                    }
+                }
+                .confirsm_btn {
+                    margin: 12px auto 0;
+                    padding: 7px 16px;
+                    border: 1px solid #174ef3;
+                    border-radius: 4px;
+
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #174ef3;
+                    display: inline-block;
+                    cursor: pointer;
+                }
+            }
+            &._active {
+                ._drop_down_title {
+                    border: 1px solid #3c3c3c;
+                    .text {
+                        color: #3c3c3c;
+                    }
+                    .arrow {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -173,7 +173,7 @@
 }
 
 .graphics_cont .graph_item .graph_body {
-  height: 276px;
+  height: 204px;
   padding-left: 45px;
   padding-bottom: 30px;
   position: relative;
@@ -232,7 +232,7 @@
   bottom: 25px;
   left: 50%;
   width: 1px;
-  height: 246px;
+  height: 174px;
   display: block;
   background: #f2f2f2;
 }
@@ -289,6 +289,7 @@
 .graphics_cont .graph_item .add_container {
   width: 100%;
   height: 100%;
+  min-height: 256px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -327,6 +328,48 @@
   .graphics_cont .graph_item .add_container {
     height: 285px;
   }
+}
+
+.graphics_cont .graph_item .apend_body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background: #fff;
+  padding: 24px 0;
+  border-radius: 8px;
+}
+
+.graphics_cont .graph_item .apend_body .apend_header {
+  padding-bottom: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3c3c3c;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.graphics_cont .graph_item .apend_body .apend_cont {
+  height: calc(100% - 35px);
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.graphics_cont .graph_item .apend_body .apend_cont .apend_item {
+  padding: 10px 24px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3c3c3c;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.graphics_cont .graph_item .apend_body .apend_cont .apend_item:hover {
+  background: #edf1fe;
 }
 
 @media screen and (max-width: 450px) {

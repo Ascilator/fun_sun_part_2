@@ -722,7 +722,103 @@
 
         });
     }
+
+    let addCalendarItem = () => {
+        $('._add_calendar').on('click', function () {
+            let html = `<div class="apend_body">
+                            <div class="apend_header">Выберите тип дашборда</div>
+                            <div class="apend_cont">
+                                <div class="apend_item">Динамика просмотров2</div>
+                                <div class="apend_item">Динамика просмотров3</div>
+                                <div class="apend_item">Динамика просмотров4</div>
+                                <div class="apend_item">Динамика просмотров5</div>
+                                <div class="apend_item">Динамика просмотров6</div>	
+                                <div class="apend_item">Динамика просмотров7</div>
+                                <div class="apend_item">Динамика просмотров8</div>
+                                <div class="apend_item">Динамика просмотров9</div>
+                                <div class="apend_item">Динамика просмотров0</div>
+                            </div>
+                        </div>`
+            html = $(html);
+            if ($(this).siblings().length == 0) {
+                $(this).parent().append(html);
+                for (let i = 0; i < $(this).siblings().children().children().length; i++) {
+                    addEventListener($(this).siblings().children().children().eq(i));
+
+                }
+
+
+
+            }
+        })
+        function addEventListener(par) {
+            par.on('click', function () {
+
+
+                let cloned = `<div class="graph_item">
+							<div class="graph_header">
+								Динамика просмотров
+							</div>
+							<div class="graph_body">
+								<div class="chart_y">
+									<div class="chart_item">5 000</div>
+									<div class="chart_item">4 000</div>
+									<div class="chart_item">3 000</div>
+									<div class="chart_item">2 000</div>
+									<div class="chart_item">1 000</div>
+								</div>
+								<div class="chart_x">
+									<div class="chart_item">
+										<p>28 май</p>
+									</div>
+									<div class="chart_item">
+										<p>8 июн</p>
+									</div>
+									<div class="chart_item">
+										<p>22 июн</p>
+									</div>
+									<div class="chart_item">
+										<p>6 июл</p>
+									</div>
+									<div class="chart_item">
+										<p>8 июн</p>
+									</div>
+									<div class="chart_item">
+										<p>22 июн</p>
+									</div>
+									<div class="chart_item">
+										<p>6 июл</p>
+									</div>
+								</div>
+								<div class="img">
+									<img src="img/chart.svg" alt="">
+								</div>
+							</div>
+							<div class="cross">
+								<img src="img/round_cross.svg" alt="">
+							</div>
+						</div>`;
+
+                cloned = $(cloned);
+                cloned.children('.graph_header').text($(this).text());
+
+                cloned.insertAfter($('.graphics_cont').children().eq($('.graphics_cont').children().length - 2));
+
+
+                $(this).parent().parent().remove();
+                $('.graph_item').children('.cross').on('click', function () {
+                    $(this).parent().remove();
+                })
+            });
+        }
+        $('.graph_item').children('.cross').on('click', function () {
+            $(this).parent().remove();
+
+        })
+
+    }
     //chart();
+    addCalendarItem();
     town_serch();
     destroy_messege();
     submit_messege();

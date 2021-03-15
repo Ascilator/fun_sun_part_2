@@ -817,7 +817,71 @@
         })
 
     }
+    let chart_graph = () => {
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Прогулка', 'Морская', 'Рыбалка', 'Онлайн', 'Водная', 'Сочи'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 4, 3],
+                    backgroundColor: '#EDF1FE',
+                    borderWidth: 0,
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    yAxes: [{
+
+                        display: false,
+                        gridLines: {
+                            display: false
+                        }
+                    }],
+                    xAxes: [{
+
+
+                        gridLines: {
+                            display: false
+                        }
+                    }]
+                }
+            }
+        });
+    }
+    let graph_col = () => {
+        let arr = [];
+        for (let i = 0; i < $('.graphic_column').length; i++) {
+            arr.push(+$('.graphic_column').eq(i).children('.value').text());
+
+        }
+        let maxEl = getMaxValue(arr);
+        console.log(maxEl);
+        function getMaxValue(array) {
+            var max = array[0]; // берем первый элемент массива
+            for (var i = 0; i < array.length; i++) { // переберем весь массив
+                // если элемент больше, чем в переменной, то присваиваем его значение переменной
+                if (max < array[i]) max = array[i];
+            }
+            // возвращаем максимальное значение
+            return max;
+        }
+        // for (let i = 0; i < $('.graphic_column').children().length; i++) {
+        //     console.log(+$('.graphic_column').eq(i).children('.value').text() / maxEl * 70);
+        //     $('.graphic_column').eq(i).css({
+        //         'height': `${+$('.graphic_column').eq(i).children('.value').text() / maxEl * 70}%`
+        //     })
+        // }
+    }
     //chart();
+    //chart_graph();
+
+
+    //graph_col();
     addCalendarItem();
     town_serch();
     destroy_messege();

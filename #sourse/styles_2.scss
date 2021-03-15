@@ -267,7 +267,162 @@
             padding: 15px;
         }
     }
+    &._analitics_3 {
+        .graph_item {
+            flex: 0 1 100%;
+        }
+        .graph_body {
+            height: 427px;
+            .chart_x {
+                .chart_item {
+                    &::after {
+                        height: 407px;
+                        bottom: 15px;
+                    }
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 4px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    display: block;
+                    background: #f2f2f2;
+                }
+            }
+        }
+    }
     @media screen and (max-width: 900px) {
         display: block;
+    }
+}
+
+.your_analitics {
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    margin-top: 12px;
+    .checkbox_item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 18px;
+        .icon {
+            flex: 0 0 24px;
+            border: 1px solid #b9b9b9;
+            border-radius: 4px;
+            height: 24px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                opacity: 0;
+                transition: 0.2s;
+            }
+        }
+        .text {
+            font-size: 16px;
+            line-height: 20px;
+            color: #3c3c3c;
+            font-weight: 400;
+        }
+        &._active {
+            .icon {
+                border: 1px solid #4872f2;
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .part_title {
+        padding: 32px 24px 24px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        color: #3c3c3c;
+    }
+    .first_row {
+        display: flex;
+        align-items: center;
+        padding: 0 24px 4px;
+        border-bottom: 1px solid #dcdcdc;
+        .checkbox_item {
+            flex: 0 1 50%;
+        }
+    }
+    .check_body {
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .checkbox_item {
+            flex: 0 1 50%;
+        }
+        @media screen and (max-width: 500px) {
+            display: block;
+        }
+    }
+}
+.popular_tags {
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    .popular_header {
+        padding: 24px;
+        margin-bottom: 30px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        color: #3c3c3c;
+        @media screen and (max-width: 600px) {
+            margin-bottom: 0;
+        }
+    }
+    .graph_tags_body {
+        padding: 0 32px 24px;
+        display: flex;
+        align-items: flex-end;
+        margin: 0 -5px;
+        height: 210px;
+        position: relative;
+        flex-wrap: wrap;
+        .graphic_column {
+            flex: 0 1 calc(16.666% - 10px);
+            margin: 0 5px 20px;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+
+            .value {
+                flex: 1 1 auto;
+                background: #edf1fe;
+                border-radius: 4px 4px 0px 0px;
+                margin-bottom: 18px;
+                font-size: 0;
+            }
+            .name {
+                font-size: 12px;
+                line-height: 16px;
+                color: #737373;
+                text-align: center;
+            }
+            @media screen and (max-width: 600px) {
+                height: 70px;
+            }
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 57px;
+            left: 27px;
+            width: calc(100% - 54px);
+            height: 1px;
+            display: block;
+            background: #f2f2f2;
+            @media screen and (max-width: 600px) {
+                display: none;
+            }
+        }
     }
 }

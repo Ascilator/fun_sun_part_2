@@ -609,7 +609,7 @@ h1.page_title {
 	&._settings {
 		flex-wrap: nowrap;
 		.calendar_item {
-			margin-right: 18px;
+			margin-right: 15px;
 			.drop_dowm_list {
 				flex: 0 0 150px;
 			}
@@ -3231,6 +3231,9 @@ h1.page_title {
 		}
 	}
 	&._analitics {
+	}
+	&._analitics_3 {
+		margin-bottom: 0px;
 	}
 }
 

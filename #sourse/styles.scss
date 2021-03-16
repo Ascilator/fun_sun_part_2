@@ -96,6 +96,14 @@ h1.page_title {
 	font-size: 24px;
 	line-height: 32px;
 	color: #3c3c3c;
+	&._buil_2 {
+		margin-bottom: 20px;
+	}
+	&._buil_3 {
+		font-size: 18px;
+		line-height: 20px;
+		margin-bottom: 20px;
+	}
 }
 .calendar_black {
 	background: #0003;
@@ -684,6 +692,9 @@ h1.page_title {
 		@media screen and (max-width: 1200px) {
 			flex-wrap: wrap;
 		}
+	}
+	&._builling {
+		display: block;
 	}
 }
 ._calendar_cont {
@@ -7575,6 +7586,212 @@ h1.page_title {
 				}
 				&:last-child {
 					border-right: none;
+				}
+			}
+		}
+	}
+	&._builling_system {
+		margin-top: 24px;
+		.table_info_header {
+			border-bottom: 1px solid #dcdcdc;
+			width: 998px;
+			.table_item {
+				padding: 12px 0;
+				&:nth-child(1) {
+					flex: 0 0 93px;
+				}
+				&:nth-child(2) {
+					flex: 0 0 60px;
+				}
+				&:nth-child(3) {
+					flex: 0 0 234px;
+				}
+				&:nth-child(4) {
+					flex: 0 0 86px;
+				}
+				&:nth-child(5) {
+					flex: 0 0 100px;
+				}
+				&:nth-child(6) {
+					flex: 0 0 100px;
+				}
+				&:nth-child(7) {
+					flex: 0 0 100px;
+				}
+				&:nth-child(8) {
+					flex: 1 1 218px;
+				}
+			}
+		}
+		.table_body {
+			height: 348px;
+			overflow: auto;
+			width: 998px;
+			.table_top_row {
+				display: flex;
+				align-items: stretch;
+				border-bottom: 1px solid #dcdcdc;
+				.table_item {
+					padding: 12px 12px;
+					text-align: left;
+					border-right: 1px solid #dcdcdc;
+					font-weight: 600;
+					font-size: 14px;
+					line-height: 18px;
+					&:nth-child(1) {
+						flex: 0 0 387px;
+						text-align: center;
+						padding: 12px 0;
+					}
+					&:nth-child(2) {
+						flex: 0 0 86px;
+						text-align: center;
+						padding: 12px 0;
+					}
+					&:nth-child(3) {
+						flex: 0 0 100px;
+						text-align: center;
+					}
+					&:nth-child(4) {
+						flex: 0 0 100px;
+						text-align: center;
+					}
+					&:nth-child(5) {
+						flex: 0 0 100px;
+						text-align: center;
+					}
+					&:nth-child(6) {
+						flex: 1 1 218px;
+						border-right: none;
+					}
+				}
+			}
+			.table_row {
+				.table_item {
+					padding: 12px 12px;
+					text-align: left;
+					&:nth-child(1) {
+						flex: 0 0 93px;
+						text-align: center;
+						padding: 12px 0;
+					}
+					&:nth-child(2) {
+						flex: 0 0 60px;
+						text-align: center;
+						padding: 12px 0;
+					}
+					&:nth-child(3) {
+						flex: 0 0 234px;
+					}
+					&:nth-child(4) {
+						flex: 0 0 86px;
+					}
+					&:nth-child(5) {
+						flex: 0 0 100px;
+						text-align: center;
+					}
+					&:nth-child(6) {
+						flex: 0 0 100px;
+						text-align: center;
+					}
+					&:nth-child(7) {
+						flex: 0 0 100px;
+						text-align: center;
+					}
+					&:nth-child(8) {
+						flex: 1 1 218px;
+					}
+				}
+			}
+		}
+	}
+	&._builling_2 {
+		margin-top: 24px;
+		max-width: 607px;
+		.table_info_header {
+			border-bottom: 1px solid #dcdcdc;
+			width: 605px;
+			.table_item {
+				padding: 12px 0;
+				&:nth-child(1) {
+					flex: 0 0 93px;
+				}
+				&:nth-child(2) {
+					flex: 1 1 382px;
+				}
+				&:nth-child(3) {
+					flex: 0 0 128px;
+				}
+			}
+		}
+		.table_body {
+			width: 605px;
+			.table_row {
+				.table_item {
+					padding: 12px 12px;
+					text-align: left;
+					&:nth-child(1) {
+						flex: 0 0 93px;
+						padding: 12px 0;
+						text-align: center;
+					}
+					&:nth-child(2) {
+						flex: 1 1 382px;
+					}
+					&:nth-child(3) {
+						flex: 0 0 128px;
+					}
+				}
+			}
+		}
+	}
+	&._builling_3 {
+		margin-top: 24px;
+		max-width: 810px;
+		.table_info_header {
+			border-bottom: 1px solid #dcdcdc;
+			width: 808px;
+			.table_item {
+				padding: 12px 0;
+				&:nth-child(1) {
+					flex: 0 0 138px;
+				}
+				&:nth-child(2) {
+					flex: 0 0 108px;
+				}
+				&:nth-child(3) {
+					flex: 1 1 388px;
+				}
+				&:nth-child(4) {
+					flex: 0 0 171px;
+				}
+			}
+		}
+		.table_body {
+			width: 808px;
+			.table_row {
+				.table_item {
+					padding: 12px 12px;
+					text-align: left;
+					&:nth-child(1) {
+						flex: 0 0 138px;
+					}
+					&:nth-child(2) {
+						flex: 0 0 108px;
+					}
+					&:nth-child(3) {
+						flex: 1 1 388px;
+					}
+					&:nth-child(4) {
+						flex: 0 0 171px;
+						text-align: center;
+						a {
+							font-size: 14px;
+							line-height: 18px;
+							text-decoration-line: underline;
+							color: #4872f2;
+						}
+					}
 				}
 			}
 		}

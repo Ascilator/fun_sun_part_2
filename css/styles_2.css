@@ -393,6 +393,12 @@
   bottom: 15px;
 }
 
+@media screen and (max-width: 600px) {
+  .graphics_cont._analitics_3 .graph_body .chart_x .chart_item::after {
+    height: 200px;
+  }
+}
+
 .graphics_cont._analitics_3 .graph_body .chart_x:after {
   content: "";
   position: absolute;
@@ -402,6 +408,21 @@
   height: 1px;
   display: block;
   background: #f2f2f2;
+}
+
+@media screen and (max-width: 600px) {
+  .graphics_cont._analitics_3 .graph_body {
+    height: 200px;
+  }
+}
+
+.graphics_cont._rait .graph_item {
+  border: none;
+  padding: 0;
+}
+
+.graphics_cont._rait .graph_header {
+  color: #3c3c3c;
 }
 
 @media screen and (max-width: 900px) {
@@ -792,6 +813,72 @@
           flex: 1 1 auto;
 }
 
+.builling_pre_table .checkbox_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.builling_pre_table .checkbox_item .icon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
+  border: 1px solid #b9b9b9;
+  border-radius: 4px;
+  height: 24px;
+  margin-right: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.builling_pre_table .checkbox_item .icon img {
+  opacity: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.builling_pre_table .checkbox_item .text {
+  font-size: 14px;
+  line-height: 18px;
+  color: #3c3c3c;
+  font-weight: 400;
+}
+
+.builling_pre_table .checkbox_item._active .icon {
+  border: 1px solid #4872f2;
+}
+
+.builling_pre_table .checkbox_item._active .icon img {
+  opacity: 1;
+}
+
+.builling_pre_table .checkbox_item:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .builling_pre_table .checkbox_item {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
 .builling_pre_table .statistic_information {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 360px;
@@ -851,6 +938,20 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .builling_pre_table._rait_2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .builling_pre_table._rait_2 {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1000px) {
   .builling_pre_table {
     display: block;
   }
@@ -885,4 +986,397 @@
   color: #4872f2;
   margin-right: 10px;
   margin-bottom: 10px;
+}
+
+.rait_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-bottom: 35px;
+  margin-bottom: 35px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.rait_block .left_part {
+  margin-right: 23px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 227px;
+          flex: 0 1 227px;
+}
+
+.rait_block .left_part .rait_title {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color: #3c3c3c;
+}
+
+.rait_block .left_part .rait {
+  margin-top: 12px;
+}
+
+.rait_block .left_part .rait .span_1 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 16px;
+  color: #3c3c3c;
+  margin: 0 8px;
+}
+
+.rait_block .left_part .rait .span_2 {
+  font-size: 14px;
+  line-height: 16px;
+  color: #737373;
+}
+
+.rait_block .left_part .learn_more {
+  margin-top: 12px;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 18px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: #4872f2;
+}
+
+.rait_block .right_part {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 394px;
+          flex: 0 1 394px;
+}
+
+.rait_block .right_part .rait_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 8px;
+}
+
+.rait_block .right_part .rait_item .name {
+  font-size: 14px;
+  line-height: 18px;
+  color: #3c3c3c;
+  margin-right: 12px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 118px;
+          flex: 0 1 118px;
+}
+
+.rait_block .right_part .rait_item .value {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 3px;
+  background: #f2f2f2;
+  border-radius: 4px;
+}
+
+.rait_block .right_part .rait_item .value .inside {
+  background: #4872f2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 4px 0 0 4px;
+  width: 60%;
+  font-size: 10px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.rait_block .right_part .rait_item:last-child {
+  margin-bottom: 0;
+}
+
+.rait_block .graph_item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(50% - 20px);
+          flex: 0 1 calc(50% - 20px);
+  padding: 25px 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  position: relative;
+  margin: 0 10px 20px;
+}
+
+.rait_block .graph_item .graph_header {
+  font-size: 16px;
+  line-height: 20px;
+  color: #737373;
+  margin-bottom: 33px;
+  font-weight: bold;
+}
+
+.rait_block .graph_item .graph_body {
+  height: 204px;
+  padding-left: 45px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.rait_block .graph_item .graph_body .chart_y {
+  top: 0;
+  width: 45px;
+  left: 0;
+  position: absolute;
+  height: calc(100% - 30px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 10px;
+  line-height: 12px;
+  color: #737373;
+  border-right: 1px solid #f2f2f2;
+}
+
+.rait_block .graph_item .graph_body .chart_x {
+  height: 30px;
+  border-top: 1px solid #f2f2f2;
+  bottom: 5px;
+  left: 45px;
+  position: absolute;
+  width: calc(100% - 45px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 10px;
+  line-height: 12px;
+  color: #737373;
+}
+
+.rait_block .graph_item .graph_body .chart_x .chart_item {
+  position: relative;
+}
+
+.rait_block .graph_item .graph_body .chart_x .chart_item:after {
+  content: "";
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  width: 1px;
+  height: 174px;
+  display: block;
+  background: #f2f2f2;
+}
+
+@media screen and (max-width: 800px) {
+  .rait_block .graph_item .graph_body .chart_x .chart_item:after {
+    height: 370px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .rait_block .graph_item .graph_body .chart_x .chart_item:after {
+    height: 170px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .rait_block .graph_item .graph_body .chart_x .chart_item {
+    white-space: nowrap;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+  .rait_block .graph_item .graph_body .chart_x .chart_item p {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+.rait_block .graph_item .graph_body .img {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  z-index: 2;
+  position: relative;
+}
+
+.rait_block .graph_item .graph_body .img img {
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .rait_block .graph_item .graph_body {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .rait_block .graph_item .graph_body {
+    height: 200px;
+  }
+}
+
+.rait_block .graph_item .cross {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.rait_block .graph_item .add_container {
+  width: 100%;
+  height: 100%;
+  min-height: 256px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.rait_block .graph_item .add_container .add_one_more_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 20px;
+  border: 1px solid #4872f2;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.rait_block .graph_item .add_container .add_one_more_btn .icon {
+  margin-right: 8px;
+}
+
+.rait_block .graph_item .add_container .add_one_more_btn .text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #4872f2;
+}
+
+@media screen and (max-width: 900px) {
+  .rait_block .graph_item .add_container {
+    height: 285px;
+  }
+}
+
+.rait_block .graph_item .apend_body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background: #fff;
+  padding: 24px 0;
+  border-radius: 8px;
+}
+
+.rait_block .graph_item .apend_body .apend_header {
+  padding-bottom: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3c3c3c;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.rait_block .graph_item .apend_body .apend_cont {
+  height: calc(100% - 35px);
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.rait_block .graph_item .apend_body .apend_cont .apend_item {
+  padding: 10px 24px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3c3c3c;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.rait_block .graph_item .apend_body .apend_cont .apend_item:hover {
+  background: #edf1fe;
+}
+
+@media screen and (max-width: 450px) {
+  .rait_block .graph_item {
+    padding: 15px;
+  }
+}
+
+.rait_block._rait_2 {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.rait_block._rait_2 .body_rait {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 394px;
+          flex: 0 1 394px;
+  margin-right: 23px;
+}
+
+.rait_block._rait_2 .body_rait .right_part {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .rait_block._rait_2 .body_rait {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+.rait_block._rait_2 .graph_item {
+  margin: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .rait_block._rait_2 {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .rait_block {
+    display: block;
+  }
+  .rait_block .left_part {
+    margin-bottom: 30px;
+  }
 }

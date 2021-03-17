@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .settings_block {
   padding: 24px 24px 4px;
   border: 1px solid #dcdcdc;
@@ -138,6 +139,74 @@
 .settings_block .settings_drop_list .drop_down_list._active ._drop_down_title .arrow {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+.icon_cont {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: relative;
+}
+
+.icon_cont img {
+  width: 18px;
+}
+
+.icon_cont:after {
+  content: "Можно добавить свою категорию";
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  padding: 12px 20px;
+  -webkit-transform: translate(-50%, -150%);
+          transform: translate(-50%, -150%);
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  line-height: 16px;
+  color: #3c3c3c;
+}
+
+.icon_cont:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  background: #fff;
+  display: block;
+  width: 14px;
+  -webkit-transform: translate(-50%, -250%);
+          transform: translate(-50%, -250%);
+  height: 8px;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.icon_cont:after, .icon_cont:before {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.icon_cont:hover:after, .icon_cont:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media screen and (max-width: 520px) {
+  .icon_cont {
+    margin: 10px auto;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: -66px;
+  }
 }
 
 .graphics_cont {
@@ -929,6 +998,12 @@
   margin-bottom: 0;
 }
 
+.builling_pre_table .statistic_information._check {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 150px;
+          flex: 0 1 150px;
+}
+
 @media screen and (max-width: 1000px) {
   .builling_pre_table .statistic_information {
     margin-top: 20px;
@@ -1364,6 +1439,22 @@
 
 .rait_block._rait_2 .graph_item {
   margin: 0;
+  padding: 25px 12px 12px;
+}
+
+.rait_block._rait_2 .graph_item .graph_body {
+  height: 174px;
+}
+
+.rait_block._rait_2 .graph_item .graph_body img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: none;
+     object-fit: none;
+}
+
+.rait_block._rait_2 .graph_item .graph_body .chart_item:after {
+  height: 134px;
 }
 
 @media screen and (max-width: 800px) {

@@ -92,6 +92,23 @@
             $(".tab_body").hide().eq($(this).index()).fadeIn()
         });
     }
+    function from_elem() {
+        $('.card_item._calc').children('input').on('change', function () {
+            $(this).siblings('.current').text($(this).val())
+        })
+        $('.minus').click(function () {
+            if ($(this).siblings('input').val() > 1) {
+                $(this).siblings('input').val($(this).siblings('input').val() - 1);
+                $(this).siblings('.current').text($(this).siblings('input').val());
+            }
+        })
+        $('.plus').click(function () {
+
+            $(this).siblings('input').val($(this).siblings('input').val() - (-1));
+            $(this).siblings('.current').text($(this).siblings('input').val());
+        })
+    }
+    from_elem();
     drop();
     //tabs();
     sidebar();
@@ -880,8 +897,193 @@
     //chart();
     //chart_graph();
 
+    let do_resevie = () => {
+        let btns = document.querySelectorAll('.do_resev');
+        let popup = document.querySelector('.do_res_popup');
+        let cross = document.querySelector('.form_cross')
+        let back = document.querySelector('.do_res_blue_href');
+        let form = 0;
+        if (cross != null) {
+            form = cross.parentElement;
+        }
+        if (back != null && popup != null && btns != null && cross != null) {
+            function crosslistener(cross_) {
+                cross_.addEventListener('click', function () {
+                    popup.classList.remove('_active');
+                    back.classList.remove('_showed');
 
+                });
+            }
+            crosslistener(cross);
+            back.addEventListener('click', function () {
+                popup.classList.remove('_active');
+                back.classList.remove('_showed');
+            });
+            for (let index = 0; index < btns.length; index++) {
+                btns[index].addEventListener('click', create_resev);
+            }
+
+            function create_resev() {
+                popup.classList.toggle('_active');
+                back.classList.toggle('_showed');
+            }
+        }
+        if (form != 0) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                let removes = [];
+                for (let i = 1; i < this.children.length - 1; i++) {
+                    removes.push(this.children[i]);
+                }
+                removes.forEach(element => {
+                    element.remove();
+                });
+
+                this.querySelector('.popup_title').innerHTML = "Ваш отзыв принят в обработку";
+                this.innerHTML += `<div class="img"><img src="img/sun.png" alt=""></div>
+                                <p>Мы в ближайшее время опубликуем Ваш отзыв.</p>`;
+                let cross = document.querySelector('.form_cross')
+                crosslistener(cross)
+
+            })
+        }
+    }
+    let pay_for_tarif = () => {
+        let big_pay_cont = document.querySelector('#buy_container');
+        if (big_pay_cont != null) {
+            big_pay_cont.querySelector('.add_option').addEventListener('click', appendSelectBlock);
+        }
+
+        function appendSelectBlock() {
+            let component = `<div class="_pay_drop_drop_item">
+                                <div class="icon">
+                                    <img src="img/tick.svg" alt="">
+                                </div>
+                                <div class="text">Рассылка по базе, “База гостей”</div>
+                            </div>`;
+            big_pay_cont.innerHTML = `<div class="select_cont">
+									<div class="pay_item">
+										<div class="item_title">Выберите опцию</div>
+										<div class="pay_drop_down">
+											<div class="pay_drop_down_title">
+												<div class="text">Все</div>
+												<div class="arrow">
+													<img src="img/arrow_down.svg" alt="">
+												</div>
+											</div>
+											<div class="pay_drop_down_body">
+												
+											</div>
+										</div>
+									</div>
+									<div class="go_to_pay _blue_btn">
+										Перейти к оплате
+									</div>
+                                </div>`;
+
+            for (let index = 0; index < 18; index++) {
+                big_pay_cont.querySelector('.pay_drop_down_body').innerHTML += component;
+            }
+            $('.pay_drop_down_title').on('click', function () {
+                $(this).siblings('.pay_drop_down_body').slideToggle();
+                $(this).parent().toggleClass('_active');
+            })
+            let components = document.querySelectorAll('._pay_drop_drop_item');
+
+            components.forEach(element => element.addEventListener('click', function () {
+                this.classList.toggle('_active')
+            }));
+
+            let payBtn = big_pay_cont.querySelector('.go_to_pay');
+            payBtn.addEventListener('click', cardPopup);
+        }
+        function cardPopup() {
+            let cardForm = `<form action="#" class="credit_card_cont">
+									
+									<div class="credit_card">
+										<div class="front">
+											<div class="input_row">
+												<div class="input_title">
+													Номер карты / Card number
+												</div>
+												<div class="input_cont">
+													<div class="input">
+														<input type="text" placeholder="0000 0000 0000 0000">
+													</div>
+												</div>
+											</div>
+											<div class="input_row">
+												<div class="input_title">
+													Срок дейсвия / Valig through
+												</div>
+												<div class="input_cont">
+													<div class="input">
+														<input type="text" placeholder="ММ">
+													</div>
+													<div class="input">
+														<input type="text" placeholder="ГГ">
+													</div>
+												</div>
+											</div>
+											<div class="input_row">
+												<div class="input_title">
+													Владелец карты / Card holder name
+												</div>
+												<div class="input_cont">
+													<div class="input">
+														<input type="text" placeholder="Имя Фамилия / Name Surname">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="back">
+											<div class="gray_strip"></div>
+											<div class="input_row">
+												<div class="input_title">
+													CVV / CVC
+												</div>
+												<div class="input_cont">
+													<div class="input">
+														<input type="text" placeholder="000">
+													</div>
+												</div>
+												<div class="input_sup_title">
+													Последние 3 цифры на полосе подписи
+												</div>
+											</div>
+										</div>
+									</div>
+									<button type="submit" class="pay_btn _blue_btn">
+										Оплатить
+									</button>
+                                </form>
+                                `;
+            let card_popup = document.querySelector('.card_popup');
+            let blue_href = document.querySelector('.card_popup_blue_href');
+
+
+
+            if (card_popup.querySelector('.credit_card_cont') == null) {
+                card_popup.querySelector('.content_box').innerHTML += cardForm;
+            }
+            let form_cross = document.querySelector('.form__cross');
+            card_popup.classList.add('_active');
+            blue_href.classList.add('_showed');
+            blue_href.addEventListener('click', function () {
+                this.classList.remove('_showed');
+                card_popup.classList.remove('_active');
+            })
+            form_cross.addEventListener('click', function () {
+                blue_href.classList.remove('_showed');
+                card_popup.classList.remove('_active');
+            })
+        }
+    }
     //graph_col();
+    pay_for_tarif();
+    do_resevie();
+
     addCalendarItem();
     town_serch();
     destroy_messege();

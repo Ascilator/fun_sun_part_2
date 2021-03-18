@@ -924,6 +924,144 @@ h1.page_title._buil_3 {
   display: block;
 }
 
+.checkbox_item_box {
+  position: relative;
+}
+
+.checkbox_item_box input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 0;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.checkbox_item_box label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  margin-bottom: 18px;
+}
+
+.checkbox_item_box label .icon {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
+  border: 1px solid #b9b9b9;
+  border-radius: 4px;
+  height: 24px;
+  margin-right: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.checkbox_item_box label .icon img {
+  opacity: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.checkbox_item_box label .text {
+  font-size: 16px;
+  line-height: 20px;
+  color: #3c3c3c;
+}
+
+.checkbox_item_box input:checked + label .icon {
+  border: 1px solid #4872f2 !important;
+}
+
+.checkbox_item_box input:checked + label .icon img {
+  opacity: 1 !important;
+}
+
+.check_box_input_key {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.check_box_input_key input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 0;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.check_box_input_key label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 12px;
+  width: 32px;
+  height: 20px;
+  border-radius: 50px;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.check_box_input_key label .front {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #dcdcdc;
+}
+
+@media screen and (max-width: 600px) {
+  .check_box_input_key {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+.check_box_input_key .text {
+  font-size: 16px;
+  line-height: 20px;
+  color: #3c3c3c;
+}
+
+.check_box_input_key input:checked + label {
+  background: #4872f2 !important;
+  border: 1px solid #44474f !important;
+}
+
+.check_box_input_key input:checked + label .front {
+  left: calc(100% - 18px) !important;
+  border: 1px solid #fff !important;
+}
+
 ._calendar_cont {
   position: relative;
 }
@@ -4650,6 +4788,18 @@ h1.page_title._buil_3 {
   margin-top: 24px;
 }
 
+.subscription_part_1._advertice .left_part {
+  margin-right: 30px;
+}
+
+.sub_title {
+  margin: 24px 0;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 20px;
+  color: #3c3c3c;
+}
+
 .subscription_cards {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4705,6 +4855,7 @@ h1.page_title._buil_3 {
   padding: 6px 16px;
   background: #ffffff;
   border-radius: 16px;
+  white-space: nowrap;
 }
 
 .subscription_cards .subscription_card .card_main_part {
@@ -6937,6 +7088,10 @@ h1.page_title._buil_3 {
           flex: 0 0 88px;
 }
 
+.stap_item_cont form .form_component .check_box_cont .check_calc .card_item input {
+  display: none;
+}
+
 .stap_item_cont form .form_component .check_box_cont .check_calc .card_item:last-child {
   margin-bottom: 0;
 }
@@ -8285,6 +8440,10 @@ h1.page_title._buil_3 {
 .stap_item_cont .big_step_form .form_body .third_form_part .part_body .card_item .minus:hover path,
 .stap_item_cont .big_step_form .form_body .third_form_part .part_body .card_item .plus:hover path {
   fill: #4872f2;
+}
+
+.stap_item_cont .big_step_form .form_body .third_form_part .part_body .card_item input {
+  display: none;
 }
 
 .stap_item_cont .big_step_form .form_body .third_form_part .part_body .card_item:nth-child(2) {
@@ -11031,7 +11190,8 @@ h1.page_title._buil_3 {
   color: #3c3c3c;
 }
 
-.main_table._rait_2 .table_body .table_row .table_item:nth-child(6) a {
+.main_table._rait_2 .table_body .table_row .table_item:nth-child(6) .do_resev {
+  cursor: pointer;
   margin-top: 12px;
   display: inline-block;
   font-size: 14px;

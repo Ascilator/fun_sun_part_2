@@ -1774,13 +1774,18 @@
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  padding: 60px 7%;
+  padding: 60px 20px;
   width: 100%;
   max-width: 740px;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+.card_popup .content_box {
+  margin: 0 auto;
+  max-width: 610px;
 }
 
 .card_popup .popup_title {
@@ -1911,7 +1916,7 @@
 }
 
 .card_popup .credit_card_cont .credit_card .back {
-  margin-left: -210px;
+  margin-left: -50%;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 calc(410 / 590 * 100%);
           flex: 0 0 calc(410 / 590 * 100%);
@@ -1988,18 +1993,6 @@
   }
 }
 
-.card_popup .credit_card_cont .pay_btn {
-  padding: 8px 40px;
-  background: #4872f2;
-  border-radius: 4px;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto;
-  font-size: 16px;
-  line-height: 24px;
-  color: #ffffff;
-}
-
 @media screen and (max-width: 1150px) {
   .card_popup .credit_card_cont {
     margin-right: 0;
@@ -2012,6 +2005,63 @@
   top: 15px;
   right: 15px;
   cursor: pointer;
+}
+
+.card_popup .status_table {
+  padding: 24px 12px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#63b4ff), to(#638fff));
+  background: linear-gradient(180deg, #63b4ff 0%, #638fff 100%);
+  border-radius: 8px;
+  max-width: 405px;
+  margin: 0 auto 24px;
+}
+
+.card_popup .status_table .stat_title {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 12px;
+}
+
+.card_popup .status_table .lower_part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card_popup .status_table .lower_part .activ_date {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.card_popup .status_table .lower_part .date {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.card_popup .pay_btn {
+  padding: 8px 40px;
+  background: #4872f2;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
 }
 
 .card_popup._active {

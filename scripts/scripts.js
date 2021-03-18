@@ -1078,6 +1078,34 @@
                 blue_href.classList.remove('_showed');
                 card_popup.classList.remove('_active');
             })
+            let finalPay = card_popup.querySelector('.pay_btn');
+            finalPay.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                card_popup.querySelector('.popup_title').textContent = `Оплата успешно произведена!`;
+                card_popup.querySelector('.popup_sub_title').innerHTML = `Новая опция начнет действовать с сб, 19 сент. 2020г.<br>Удачных путешествий!`;
+
+                card_popup.querySelector('form').remove();
+                card_popup.innerHTML += `<div class="status_table">
+                                            <div class="stat_title">Рассылка по базе, “База гостей”</div>
+                                            <div class="lower_part">
+                                                <div class="activ_date">Дата активации</div>
+                                                <div class="date">19 сент. 2020 г.</div>
+                                            </div>
+                                        </div>
+                                        <button class="pay_btn _blue_btn">
+                                            Готово
+                                        </button>`;
+                card_popup.querySelector('.pay_btn').addEventListener('click', function () {
+                    blue_href.classList.remove('_showed');
+                    card_popup.classList.remove('_active');
+                });
+                form_cross = document.querySelector('.form__cross');
+                form_cross.addEventListener('click', function () {
+                    blue_href.classList.remove('_showed');
+                    card_popup.classList.remove('_active');
+                })
+            })
         }
     }
     //graph_col();

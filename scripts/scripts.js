@@ -999,6 +999,8 @@
             payBtn.addEventListener('click', cardPopup);
         }
         function cardPopup() {
+            $('.pay_drop_down_title').siblings('.pay_drop_down_body').slideUp();
+            $('.pay_drop_down_title').parent().removeClass('_active');
             let cardForm = `<form action="#" class="credit_card_cont">
 									
 									<div class="credit_card">
@@ -1073,6 +1075,10 @@
             blue_href.addEventListener('click', function () {
                 this.classList.remove('_showed');
                 card_popup.classList.remove('_active');
+                if (card_popup.querySelector('.status_table') != null) {
+                    card_popup.querySelector('.status_table').remove();
+                    card_popup.querySelector('.pay_btn').remove();
+                }
             })
             form_cross.addEventListener('click', function () {
                 blue_href.classList.remove('_showed');
@@ -1085,8 +1091,10 @@
                 card_popup.querySelector('.popup_title').textContent = `Оплата успешно произведена!`;
                 card_popup.querySelector('.popup_sub_title').innerHTML = `Новая опция начнет действовать с сб, 19 сент. 2020г.<br>Удачных путешествий!`;
 
-                card_popup.querySelector('form').remove();
-                card_popup.innerHTML += `<div class="status_table">
+                if (card_popup.querySelector('form') != null)
+                    card_popup.querySelector('form').remove();
+                if (card_popup.querySelector('.status_table') == null)
+                    card_popup.innerHTML += `<div class="status_table">
                                             <div class="stat_title">Рассылка по базе, “База гостей”</div>
                                             <div class="lower_part">
                                                 <div class="activ_date">Дата активации</div>
@@ -1099,11 +1107,19 @@
                 card_popup.querySelector('.pay_btn').addEventListener('click', function () {
                     blue_href.classList.remove('_showed');
                     card_popup.classList.remove('_active');
+
+                    card_popup.querySelector('.status_table').remove();
+                    card_popup.querySelector('.pay_btn').remove();
                 });
+
                 form_cross = document.querySelector('.form__cross');
                 form_cross.addEventListener('click', function () {
                     blue_href.classList.remove('_showed');
                     card_popup.classList.remove('_active');
+                    if (card_popup.querySelector('.status_table') != null) {
+                        card_popup.querySelector('.status_table').remove();
+                        card_popup.querySelector('.pay_btn').remove();
+                    }
                 })
             })
         }

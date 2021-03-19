@@ -94,18 +94,16 @@
     }
     function from_elem() {
         $('.card_item._calc').children('input').on('change', function () {
-            $(this).siblings('.current').text($(this).val())
+            $(this).siblings('input').text($(this).val())
         })
         $('.minus').click(function () {
             if ($(this).siblings('input').val() > 1) {
                 $(this).siblings('input').val($(this).siblings('input').val() - 1);
-                $(this).siblings('.current').text($(this).siblings('input').val());
             }
         })
         $('.plus').click(function () {
 
             $(this).siblings('input').val($(this).siblings('input').val() - (-1));
-            $(this).siblings('.current').text($(this).siblings('input').val());
         })
     }
     from_elem();

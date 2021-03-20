@@ -1122,6 +1122,59 @@
             })
         }
     }
+    let add_criteri = () => {
+        let buttons = document.querySelectorAll('.add_more');
+        let popup = document.querySelector('.add_criterium_popup');
+        let form_cross = popup.querySelector('.form__cross');
+        let blue_href = document.querySelector('.add_criterium_popup_blue_href');
+        let more_fuild_btn = document.querySelector('.add_one_more_field');
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', popupUp);
+        }
+
+        function popupUp() {
+            popup.classList.add('_active');
+            blue_href.classList.add('_showed');
+        }
+        function popupDown() {
+            popup.classList.remove('_active');
+            blue_href.classList.remove('_showed');
+        }
+        function addField() {
+            let component = document.createElement('div');
+            component.classList.add('enter_criterium');
+            component.innerHTML = `<div class="input_title">Введите название критерия</div>
+                                <div class="input">
+                                    <input type="text">
+                                </div>`;
+            console.log(popup.children[0].children.length - 1);
+            popup.children[0].children[popup.children[0].children.length - 2].insertAdjacentElement("beforebegin", component)
+        }
+        form_cross.addEventListener('click', popupDown);
+        blue_href.addEventListener('click', popupDown);
+        more_fuild_btn.addEventListener('click', addField);
+
+
+
+
+    }
+    let accordeon = () => {
+        $('.acc_title').click(function () {
+            $(this).siblings('.acc_body').slideToggle();
+
+            $(this).parent().toggleClass('_active');
+        })
+
+        $('.acc_title_').click(function () {
+            $('.acc_title_').not(this).siblings('.acc_body').slideUp();
+            $(this).siblings('.acc_body').slideToggle();
+
+            $('.acc_title_').not(this).parent().removeClass('_active');
+            $(this).parent().toggleClass('_active');
+        })
+    }
+    add_criteri();
+    accordeon();
     //graph_col();
     pay_for_tarif();
     do_resevie();
@@ -1133,7 +1186,6 @@
     upload();
     calendar();
     messege_block();
-
 
 
 

@@ -86,8 +86,8 @@
     }
     function tabs() {
         $(".tab_body").not(":first").hide();
-        $('.tab_link').click(function () {
-            $('.tab_link').removeClass('_active');
+        $('._tab_link').click(function () {
+            $('._tab_link').removeClass('_active');
             $(this).addClass('_active');
             $(".tab_body").hide().eq($(this).index()).fadeIn()
         });
@@ -108,7 +108,7 @@
     }
     from_elem();
     drop();
-    //tabs();
+    tabs();
     sidebar();
     $('.search_row>input').on('focus', function () {
         $(this).parent().addClass('_active');

@@ -34,6 +34,48 @@ body {
 		}
 	}
 }
+.card_item {
+	font-size: 14px;
+	line-height: 18px;
+	color: #3c3c3c;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start !important;
+	.minus,
+	.plus {
+		cursor: pointer;
+		path {
+			fill: #737373;
+			transition: 0.2s;
+		}
+		circle {
+			transition: 0.2s;
+			stroke: #737373;
+		}
+		&:hover {
+			circle {
+				stroke: #4872f2;
+			}
+			path {
+				fill: #4872f2;
+			}
+		}
+	}
+	input {
+		margin: 0 10px;
+		display: block;
+		width: 70px;
+		height: 15px;
+		border: none;
+		border-bottom: 1px solid #737373;
+		text-align: center;
+	}
+	.plus {
+	}
+	&._calc {
+		justify-content: space-between;
+	}
+}
 /*====================================================================================*/
 a {
 	text-decoration: none;
@@ -4672,6 +4714,54 @@ h1.page_title {
 						}
 					}
 				}
+				.add_link {
+					margin-bottom: 32px;
+					.input_title {
+						margin-bottom: 4px;
+						font-size: 14px;
+						line-height: 18px;
+						color: #737373;
+					}
+					.input_body {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						.input {
+							flex: 1 1 auto;
+							margin-right: 20px;
+							input {
+								display: block;
+								width: 100%;
+								height: 40px;
+								padding: 0 10px;
+								border: 1px solid #dcdcdc;
+								border-radius: 4px;
+							}
+						}
+						.change {
+							cursor: pointer;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							flex: 0 1 200px;
+							font-size: 16px;
+							line-height: 24px;
+							color: #3c3c3c;
+							height: 40px;
+
+							background: #dcdcdc;
+							border-radius: 4px;
+						}
+					}
+				}
+				.add_more {
+					margin: 0 0 32px;
+
+					font-size: 14px;
+					line-height: 18px;
+					color: #4872f2;
+					cursor: pointer;
+				}
 			}
 		}
 		.tab_header {
@@ -5162,6 +5252,7 @@ h1.page_title {
 					display: block;
 				}
 			}
+
 			&._bordered {
 				border: 1px solid #dcdcdc !important;
 				border-radius: 4px;
@@ -5191,6 +5282,9 @@ h1.page_title {
 						margin-right: 0;
 						margin-bottom: 30px;
 					}
+				}
+				.card_item {
+					flex: 0 1 calc(50% - 52px) !important;
 				}
 				.drop_down_list {
 					max-width: 242px;
@@ -5247,6 +5341,88 @@ h1.page_title {
 				}
 			}
 			&._flex_2 {
+				.checkbox_item {
+					flex: 0 1 calc(50% - 52px) !important;
+				}
+				.card_item {
+					flex: 0 1 calc(50% - 52px) !important;
+					font-size: 14px;
+					line-height: 18px;
+					color: #3c3c3c;
+					display: flex;
+					align-items: center;
+					justify-content: flex-start !important;
+					.minus,
+					.plus {
+						display: none;
+						cursor: pointer;
+						path {
+							fill: #737373;
+							transition: 0.2s;
+						}
+						circle {
+							transition: 0.2s;
+							stroke: #737373;
+						}
+						&:hover {
+							circle {
+								stroke: #4872f2;
+							}
+							path {
+								fill: #4872f2;
+							}
+						}
+					}
+					input {
+						margin: 0 10px;
+						display: block;
+						width: 70px;
+						height: 15px;
+						border: none;
+						border-bottom: 1px solid #737373;
+						text-align: center;
+					}
+					.plus {
+					}
+					&._calc {
+						justify-content: space-between;
+					}
+				}
+				.check_calc {
+				}
+				@media screen and (max-width: 550px) {
+					padding-bottom: 30px;
+				}
+				@media screen and (max-width: 550px) {
+					._absol {
+						bottom: 10px;
+					}
+				}
+				@media screen and (max-width: 800px) {
+					display: flex;
+					overflow: auto;
+
+					.form_title {
+						white-space: nowrap;
+						margin-bottom: 0;
+					}
+				}
+			}
+			&._flex_2 {
+				flex-wrap: wrap;
+				.check_calc {
+					flex: 1 1 100%;
+					display: flex;
+					align-items: center;
+					.checkbox_item,
+					.card_item {
+						flex: 0 1 292px;
+						margin-right: 52px;
+					}
+				}
+				.check_col {
+					flex: 0 1 calc(50% - 52px);
+				}
 				.form_title {
 					justify-content: flex-start;
 					.info_cont {
@@ -6244,6 +6420,13 @@ h1.page_title {
 			}
 		}
 	}
+	input {
+		display: inline-block;
+		width: 70px;
+		height: 15px;
+		border: none;
+		border-bottom: 1px solid #737373;
+	}
 }
 
 ._textarea {
@@ -6293,6 +6476,10 @@ h1.page_title {
 				line-height: 24px;
 				color: #4872f2;
 				border-radius: 4px;
+				&._active {
+					color: #fff;
+					background: #4872f2;
+				}
 			}
 		}
 		.textarea_title {

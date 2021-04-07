@@ -108,7 +108,7 @@
     }
     from_elem();
     drop();
-    tabs();
+    scripts_2tabs();
     sidebar();
     $('.search_row>input').on('focus', function () {
         $(this).parent().addClass('_active');
